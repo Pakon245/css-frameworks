@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Bootstrap Navbar with Gradient and Mode Toggle</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .navbar-custom {
+            padding: 0.5rem 1rem;
+            background: linear-gradient(45deg, #90e1a1, #05853e);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        body.dark-mode .navbar-custom {
+            background: linear-gradient(45deg, #333, #1e1e1e);
+        }
+
+        .navbar-custom .nav-link {
+            color: #fff;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        body.dark-mode .navbar-custom .nav-link {
+            color: #e0e0e0;
+        }
+
+        .navbar-custom .form-control {
+            border-radius: 50px;
+            background-color: #f8f9fa;
+            color: #333;
+            transition: background-color 0.3s;
+        }
+
+        body.dark-mode .navbar-custom .form-control {
+            background-color: #333;
+            color: #e0e0e0;
+        }
+
+        .navbar-custom .btn-outline-success {
+            border-radius: 50px;
+            color: #333;
+        }
+
+        body.dark-mode .navbar-custom .btn-outline-success {
+            color: #e0e0e0;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .table {
+            background-color: #ffffff;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark-mode .table {
+            background-color: #2a2a2a;
+            color: #e0e0e0;
+        }
+
+        .table th,
+        .table td {
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .table tbody tr {
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        body.dark-mode .table tbody tr:hover {
+            background-color: #444;
+        }
+
+        .footer {
+            background-color: #ffffff;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark-mode .footer {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+
+        .mode-toggle {
+            cursor: pointer;
+            font-size: 1.5rem;
+            margin-right: 20px;
+        }
+
+        .form-search {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-custom .search-wrapper {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-custom .search-wrapper {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-custom">
+        <div class="container-fluid d-flex">
+            <a class="navbar-brand" href="#">CSMJU</a>
+            <a class="nav-link active" href="index.html" style="font-weight: bold; color: #007bff;">Home</a>
+            <div class="search-wrapper d-flex">
+                <span class="mode-toggle" onclick="toggleMode()">🌞</span>
+                <form class="d-flex form-search" role="search">
+                    <input class="form-control me-2" type="search" placeholder="ค้นหา" aria-label="ค้นหา">
+                    <button class="btn btn-outline-success" type="submit">ค้นหา</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">รายชื่อสมาชิก</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ลำดับ</th>
+                            <th>รหัสนักศึกษา</th>
+                            <th>ชื่อ-นามสกุล</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Student data -->
+                        <tr onclick="location.href='profile.html?id=6604101301'"><td>1</td><td>6604101301</td><td><a href="profile.html?id=6604101301" class="text-decoration-none text-reset">นายกรรชัย บัวงาม</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101302'"><td>2</td><td>6604101302</td><td><a href="profile.html?id=6604101302" class="text-decoration-none text-reset">นายกรวิชญ์ ขอบเหลือง</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101303'"><td>3</td><td>6604101303</td><td><a href="profile.html?id=6604101303" class="text-decoration-none text-reset">นางสาวกวินธิดา ภูงาม</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101304'"><td>4</td><td>6604101304</td><td><a href="profile.html?id=6604101304" class="text-decoration-none text-reset">นายก้องภพ มูลวงค์</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101305'"><td>5</td><td>6604101305</td><td><a href="profile.html?id=6604101305" class="text-decoration-none text-reset">นายกิตติกร ชุ่มรัศมี</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101306'"><td>6</td><td>6604101306</td><td><a href="profile.html?id=6604101306" class="text-decoration-none text-reset">นายกิตติกานต์ เอียดใหญ่</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101307'"><td>7</td><td>6604101307</td><td><a href="profile.html?id=6604101307" class="text-decoration-none text-reset">นายกิตติคุณ กิจวิบูลย์สิน</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101308'"><td>8</td><td>6604101308</td><td><a href="profile.html?id=6604101308" class="text-decoration-none text-reset">นายกิตติทัศน์ วิริยา</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101309'"><td>9</td><td>6604101309</td><td><a href="profile.html?id=6604101309" class="text-decoration-none text-reset">นางสาวกุลธิดา เกตุแก้ว</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101310'"><td>10</td><td>6604101310</td><td><a href="profile.html?id=6604101310" class="text-decoration-none text-reset">นายคณาธิป ศะศิบุตร์</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101311'"><td>11</td><td>6604101311</td><td><a href="profile.html?id=6604101311" class="text-decoration-none text-reset">นายคริสตนุสรณ์ มหาวีระตระกูล</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101312'"><td>12</td><td>6604101312</td><td><a href="profile.html?id=6604101312" class="text-decoration-none text-reset">นายจักรพงศ์ พรหมตัน</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101313'"><td>13</td><td>6604101313</td><td><a href="profile.html?id=6604101313" class="text-decoration-none text-reset">นายจักรพรรดิ์ เจริญ</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101314'"><td>14</td><td>6604101314</td><td><a href="profile.html?id=6604101314" class="text-decoration-none text-reset">นายจิรัฎฐ์ แจกอง</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101315'"><td>15</td><td>6604101315</td><td><a href="profile.html?id=6604101315" class="text-decoration-none text-reset">นางสาวจิราพร คำมา</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101316'"><td>16</td><td>6604101316</td><td><a href="profile.html?id=6604101316" class="text-decoration-none text-reset">นายจีรศักดิ์ ชำนิกุล</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101317'"><td>17</td><td>6604101317</td><td><a href="profile.html?id=6604101317" class="text-decoration-none text-reset">นายชนะศึก ยอดนางรอง</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101318'"><td>18</td><td>6604101318</td><td><a href="profile.html?id=6604101318" class="text-decoration-none text-reset">นายชนาธิป สร้อยจิตร</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101319'"><td>19</td><td>6604101319</td><td><a href="profile.html?id=6604101319" class="text-decoration-none text-reset">นายชัชวาลย์ อ้วนล่ำ</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101320'"><td>20</td><td>6604101320</td><td><a href="profile.html?id=6604101320" class="text-decoration-none text-reset">นายชิณวัฒน์ ตันติสิทธิพร</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101321'"><td>21</td><td>6604101321</td><td><a href="profile.html?id=6604101321" class="text-decoration-none text-reset">นายชินกฤต กันนุฬา</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101322'"><td>22</td><td>6604101322</td><td><a href="profile.html?id=6604101322" class="text-decoration-none text-reset">นางสาวญาณัจฉรา ฟองลอย</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101323'"><td>23</td><td>6604101323</td><td><a href="profile.html?id=6604101323" class="text-decoration-none text-reset">นางสาวญาณิศา แดงฉ่ำ</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101324'"><td>24</td><td>6604101324</td><td><a href="profile.html?id=6604101324" class="text-decoration-none text-reset">นางสาวฐิติกานต์ สุระโยธิน</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101325'"><td>25</td><td>6604101325</td><td><a href="profile.html?id=6604101325" class="text-decoration-none text-reset">นางสาวฐิตินันท์ บุญรอด</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101326'"><td>26</td><td>6604101326</td><td><a href="profile.html?id=6604101326" class="text-decoration-none text-reset">นายณัฐณรงค์ คูละสะ</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101327'"><td>27</td><td>6604101327</td><td><a href="profile.html?id=6604101327" class="text-decoration-none text-reset">นายณัฐดนัย ทาสัก</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101328'"><td>28</td><td>6604101328</td><td><a href="profile.html?id=6604101328" class="text-decoration-none text-reset">นายณัฐธชนพงศ์ ไชยศรี</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101329'"><td>29</td><td>6604101329</td><td><a href="profile.html?id=6604101329" class="text-decoration-none text-reset">นายณัฐภูมิ หลู่จิ่ง</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101330'"><td>30</td><td>6604101330</td><td><a href="profile.html?id=6604101330" class="text-decoration-none text-reset">นายธนพัทร บุญผัด</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101331'"><td>31</td><td>6604101331</td><td><a href="profile.html?id=6604101331" class="text-decoration-none text-reset">นายธนภัทร ตาสาย</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101332'"><td>32</td><td>6604101332</td><td><a href="profile.html?id=6604101332" class="text-decoration-none text-reset">นายธนวัฒน์ ศรีลาคำ</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101333'"><td>33</td><td>6604101333</td><td><a href="profile.html?id=6604101333" class="text-decoration-none text-reset">นายธนวัตร ศิริเทศ</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101334'"><td>34</td><td>6604101334</td><td><a href="profile.html?id=6604101334" class="text-decoration-none text-reset">นางสาวธมลวรรณ ใจเป็ง</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101335'"><td>35</td><td>6604101335</td><td><a href="profile.html?id=6604101335" class="text-decoration-none text-reset">นายธราเทพ จันทร์ดำ</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101336'"><td>36</td><td>6604101336</td><td><a href="profile.html?id=6604101336" class="text-decoration-none text-reset">นางสาวธัญพิมล วังใน</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101337'"><td>37</td><td>6604101337</td><td><a href="profile.html?id=6604101337" class="text-decoration-none text-reset">นายธีรกานต์ ขันคำ</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101338'"><td>38</td><td>6604101338</td><td><a href="profile.html?id=6604101338" class="text-decoration-none text-reset">นายธีรภัทร จินดาคำ</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101339'"><td>39</td><td>6604101339</td><td><a href="profile.html?id=6604101339" class="text-decoration-none text-reset">นายธีรภัทร พอจิต</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101340'"><td>40</td><td>6604101340</td><td><a href="profile.html?id=6604101340" class="text-decoration-none text-reset">นายธีรศักดิ์ แก้วภา</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101341'"><td>41</td><td>6604101341</td><td><a href="profile.html?id=6604101341" class="text-decoration-none text-reset">นายนพรัตน์ ทะนันท์</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101342'"><td>42</td><td>6604101342</td><td><a href="profile.html?id=6604101342" class="text-decoration-none text-reset">นายนฤเดช คำมาวัน</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101343'"><td>43</td><td>6604101343</td><td><a href="profile.html?id=6604101343" class="text-decoration-none text-reset">นางสาวนิศารัตน์ นันติ</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101344'"><td>44</td><td>6604101344</td><td><a href="profile.html?id=6604101344" class="text-decoration-none text-reset">นายบวรพงศ์ นาคสุข</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101345'"><td>45</td><td>6604101345</td><td><a href="profile.html?id=6604101345" class="text-decoration-none text-reset">นางสาวบัณฑิตา สุริยะ</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101346'"><td>46</td><td>6604101346</td><td><a href="profile.html?id=6604101346" class="text-decoration-none text-reset">นายบุญยาณัฐ อินทจักร์</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101347'"><td>47</td><td>6604101347</td><td><a href="profile.html?id=6604101347" class="text-decoration-none text-reset">นางสาวปภาสรณ์ แสนชัย</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101348'"><td>48</td><td>6604101348</td><td><a href="profile.html?id=6604101348" class="text-decoration-none text-reset">นายปรเมษฐ์ จันทร์ย้อน</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101349'"><td>49</td><td>6604101349</td><td><a href="profile.html?id=6604101349" class="text-decoration-none text-reset">นางสาวปลายฟ้า สูงดี</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101350'"><td>50</td><td>6604101350</td><td><a href="profile.html?id=6604101350" class="text-decoration-none text-reset">นายปาณัสม์ บุญเลา</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101351'"><td>51</td><td>6604101351</td><td><a href="profile.html?id=6604101351" class="text-decoration-none text-reset">นายปารเมศ สิทธิมูล</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101352'"><td>52</td><td>6604101352</td><td><a href="profile.html?id=6604101352" class="text-decoration-none text-reset">นายพงศกร คำวัง</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101353'"><td>53</td><td>6604101353</td><td><a href="profile.html?id=6604101353" class="text-decoration-none text-reset">นายพงศกร ทนานนท์</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101354'"><td>54</td><td>6604101354</td><td><a href="profile.html?id=6604101354" class="text-decoration-none text-reset">นายพงศ์ศิริ อินตุ่น</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101355'"><td>55</td><td>6604101355</td><td><a href="profile.html?id=6604101355" class="text-decoration-none text-reset">นายพชร สีทอง</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101356'"><td>56</td><td>6604101356</td><td><a href="profile.html?id=6604101356" class="text-decoration-none text-reset">นายพรพิพัฒน์ พรมเสพสัก</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101357'"><td>57</td><td>6604101357</td><td><a href="profile.html?id=6604101357" class="text-decoration-none text-reset">นางสาวพัชราภรณ์ อุดมโภชน์</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101358'"><td>58</td><td>6604101358</td><td><a href="profile.html?id=6604101358" class="text-decoration-none text-reset">นายพัทธดนย์ แก้วกัลยา</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101359'"><td>59</td><td>6604101359</td><td><a href="profile.html?id=6604101359" class="text-decoration-none text-reset">นายพีรธัช เคนผา</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101360'"><td>60</td><td>6604101360</td><td><a href="profile.html?id=6604101360" class="text-decoration-none text-reset">นายพีรภาส มะณีดวงฤทธิ์</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101361'"><td>61</td><td>6604101361</td><td><a href="profile.html?id=6604101361" class="text-decoration-none text-reset">นายพีระพัฒน์ มิคะนุช</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101362'"><td>62</td><td>6604101362</td><td><a href="profile.html?id=6604101362" class="text-decoration-none text-reset">นายภัทรพล กิตอนันต์</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101363'"><td>63</td><td>6604101363</td><td><a href="profile.html?id=6604101363" class="text-decoration-none text-reset">นายภัทรพล บุญพา</a></td></tr>
+                        <tr onclick="location.href='p.html'"><td>64</td><td>6604101364</td><td><a href="p.html" class="text-decoration-none text-reset">นายภากร รักใหม่</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101365'"><td>65</td><td>6604101365</td><td><a href="profile.html?id=6604101365" class="text-decoration-none text-reset">นายภาคิน อินแถลง</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101366'"><td>66</td><td>6604101366</td><td><a href="profile.html?id=6604101366" class="text-decoration-none text-reset">นายภานุสรณ์ คำโคกกรวด</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101367'"><td>67</td><td>6604101367</td><td><a href="profile.html?id=6604101367" class="text-decoration-none text-reset">นางสาวภารดา ฟ้าร่วน</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101368'"><td>68</td><td>6604101368</td><td><a href="profile.html?id=6604101368" class="text-decoration-none text-reset">นายภีรภัทร์ ขอดแก้ว</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101369'"><td>69</td><td>6604101369</td><td><a href="profile.html?id=6604101369" class="text-decoration-none text-reset">นายภูริพัฒน์ เสริมสุธีอนุวัฒน์</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101370'"><td>70</td><td>6604101370</td><td><a href="profile.html?id=6604101370" class="text-decoration-none text-reset">นางสาวมั่นฤทัย ใจคง</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101371'"><td>71</td><td>6604101371</td><td><a href="profile.html?id=6604101371" class="text-decoration-none text-reset">นายเมธัส พรวิสุทธิ์</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101372'"><td>72</td><td>6604101372</td><td><a href="profile.html?id=6604101372" class="text-decoration-none text-reset">นางสาวเมธาวี จันสม</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101373'"><td>73</td><td>6604101373</td><td><a href="profile.html?id=6604101373" class="text-decoration-none text-reset">นายยศกร มุกดา</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101374'"><td>74</td><td>6604101374</td><td><a href="profile.html?id=6604101374" class="text-decoration-none text-reset">นางสาวรัฐนันท์ ประไพ</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101375'"><td>75</td><td>6604101375</td><td><a href="profile.html?id=6604101375" class="text-decoration-none text-reset">นายรัตนโชติ ทองคต</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101376'"><td>76</td><td>6604101376</td><td><a href="profile.html?id=6604101376" class="text-decoration-none text-reset">นายวรเดช ปิ่นทอง</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101377'"><td>77</td><td>6604101377</td><td><a href="profile.html?id=6604101377" class="text-decoration-none text-reset">นายวิธาน โกฎแสง</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101378'"><td>78</td><td>6604101378</td><td><a href="profile.html?id=6604101378" class="text-decoration-none text-reset">นางสาววีริศา เขียววรรณา</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101379'"><td>79</td><td>6604101379</td><td><a href="profile.html?id=6604101379" class="text-decoration-none text-reset">นางสาวศรัญญา กลมกลึง</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101380'"><td>80</td><td>6604101380</td><td><a href="profile.html?id=6604101380" class="text-decoration-none text-reset">นายศรายุทร์ จันทร์แดง</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101381'"><td>81</td><td>6604101381</td><td><a href="profile.html?id=6604101381" class="text-decoration-none text-reset">นายศิรสิทธิ์ สำราญ</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101382'"><td>82</td><td>6604101382</td><td><a href="profile.html?id=6604101382" class="text-decoration-none text-reset">นางสาวศิริรัตน์ คชสาร</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101383'"><td>83</td><td>6604101383</td><td><a href="profile.html?id=6604101383" class="text-decoration-none text-reset">นายศิศิกร แถบทอง</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101384'"><td>84</td><td>6604101384</td><td><a href="profile.html?id=6604101384" class="text-decoration-none text-reset">นายศุปวิทย์ วงศ์สุภา</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101385'"><td>85</td><td>6604101385</td><td><a href="profile.html?id=6604101385" class="text-decoration-none text-reset">นายศุภกร ฐิติสโรช</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101386'"><td>86</td><td>6604101386</td><td><a href="profile.html?id=6604101386" class="text-decoration-none text-reset">นางสาวศุภพิชญ์ พุ่มนิล</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101387'"><td>87</td><td>6604101387</td><td><a href="profile.html?id=6604101387" class="text-decoration-none text-reset">นายสรวิศ ภูทะวัง</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101388'"><td>88</td><td>6604101388</td><td><a href="profile.html?id=6604101388" class="text-decoration-none text-reset">นายสิธินนท์</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101389'"><td>89</td><td>6604101389</td><td><a href="profile.html?id=6604101389" class="text-decoration-none text-reset">นางสาวสิรินรัตน์ ทองสาดี</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101390'"><td>90</td><td>6604101390</td><td><a href="profile.html?id=6604101390" class="text-decoration-none text-reset">นายสุทธิพงษ์ คิดอ่าน</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101391'"><td>91</td><td>6604101391</td><td><a href="profile.html?id=6604101391" class="text-decoration-none text-reset">นายสุทธิพจน์ รูปโสม</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101392'"><td>92</td><td>6604101392</td><td><a href="profile.html?id=6604101392" class="text-decoration-none text-reset">นางสาวสุภัทรา พรมประราบ</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101393'"><td>93</td><td>6604101393</td><td><a href="profile.html?id=6604101393" class="text-decoration-none text-reset">นายสุวพิชญ์ บุญตวย</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101394'"><td>94</td><td>6604101394</td><td><a href="profile.html?id=6604101394" class="text-decoration-none text-reset">นางสาวหทัยทิพย์ ปรากริม</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101395'"><td>95</td><td>6604101395</td><td><a href="profile.html?id=6604101395" class="text-decoration-none text-reset">นายอดิศักดิ์ ประเสริฐ</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101396'"><td>96</td><td>6604101396</td><td><a href="profile.html?id=6604101396" class="text-decoration-none text-reset">นายอนุพงค์ มาบุญเรือง</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101397'"><td>97</td><td>6604101397</td><td><a href="profile.html?id=6604101397" class="text-decoration-none text-reset">นายอภิไช โฉมทอง</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101398'"><td>98</td><td>6604101398</td><td><a href="profile.html?id=6604101398" class="text-decoration-none text-reset">นางสาวอภิญญา เรณูแย้ม</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101399'"><td>99</td><td>6604101399</td><td><a href="profile.html?id=6604101399" class="text-decoration-none text-reset">นายอรรคเดช ขนม</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101400'"><td>100</td><td>6604101400</td><td><a href="profile.html?id=6604101400" class="text-decoration-none text-reset">นายอรรถชาติ ผลจันทร์</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101401'"><td>101</td><td>6604101401</td><td><a href="profile.html?id=6604101401" class="text-decoration-none text-reset">นางสาวอาณดา แก้วประพันธ์</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101402'"><td>102</td><td>6604101402</td><td><a href="profile.html?id=6604101402" class="text-decoration-none text-reset">นางสาวอิทธิพร ขัดสี</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101403'"><td>103</td><td>6604101403</td><td><a href="profile.html?id=6604101403" class="text-decoration-none text-reset">นายชยานันต์ หล้ากาศ</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101404'"><td>104</td><td>6604101404</td><td><a href="profile.html?id=6604101404" class="text-decoration-none text-reset">นายนพดล เพ่งพิศ</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101405'"><td>105</td><td>6604101405</td><td><a href="profile.html?id=6604101405" class="text-decoration-none text-reset">นายพีรพล พิบูลย์</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101407'"><td>106</td><td>6604101407</td><td><a href="profile.html?id=6604101407" class="text-decoration-none text-reset">นางสาวหฤทัย ยุวรัตน์</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101408'"><td>107</td><td>6604101408</td><td><a href="profile.html?id=6604101408" class="text-decoration-none text-reset">นายปราวิต ประภาวรารัตน์</a></td></tr>
+                        <tr onclick="location.href='profile.html?id=6604101409'"><td>108</td><td>6604101409</td><td><a href="profile.html?id=6604101409" class="text-decoration-none text-reset">นายเจษฎาพร ชัยวงษ์</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center">
+    <a href="index.html" class="btn btn-primary">กลับ</a>
+</div>
+
+
+    <div class="footer">
+        <p>&copy; 2024 CSMJU</p>
+        
+    </div>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('dark-mode');
+            const toggleButton = document.querySelector('.mode-toggle');
+            if (document.body.classList.contains('dark-mode')) {
+                toggleButton.textContent = '🌜';
+            } else {
+                toggleButton.textContent = '🌞';
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
